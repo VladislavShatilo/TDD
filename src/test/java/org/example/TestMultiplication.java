@@ -7,10 +7,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TestMultiplication {
     @Test
-    public void test1(){
+    public void testMultiplication(){
         Dollar five = new Dollar(5);
         Assertions.assertEquals(new Dollar(10),five.times(2));
         Assertions.assertEquals(new Dollar(15),five.times(3));
+    }
+
+    @Test
+    public void testFrancMultiplication(){
+        Franc five = new Franc(5);
+        Assertions.assertEquals(new Franc(10),five.times(2));
+        Assertions.assertEquals(new Franc(15),five.times(3));
     }
 
     @Test
