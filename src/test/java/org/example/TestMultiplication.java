@@ -9,8 +9,10 @@ class TestMultiplication {
     @Test
     public void test1(){
         Dollar five = new Dollar(5);
-        five.times(2);
-        Assertions.assertEquals(10,five.amount);
+        Dollar product = five.times(2);
+        Assertions.assertEquals(10,product.amount);
+        product = five.times(3);
+        Assertions.assertEquals(15,product.amount);
     }
 
 }
