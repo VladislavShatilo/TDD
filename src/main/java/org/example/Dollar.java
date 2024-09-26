@@ -1,14 +1,17 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Dollar extends Money{
-    Dollar (int amount){
-        this.amount = amount;
+    private String currency;
+
+    Dollar (int amount,String currency){
+        super(amount,currency);
+
+
     }
 
+
     Money times(int multiplier){
-        return new Dollar(amount * multiplier);
+        return Money.dollar(amount*multiplier);
 
     }
     public static void main(String[] args) {
