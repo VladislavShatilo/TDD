@@ -21,11 +21,6 @@ package org.example;
         return currency;
     }
 
-
-     Expression plus(Money addend){
-         return new Money(amount+ addend.amount,currency);
-    }
-
     static Money dollar(int amount){
         return new Money(amount,"USD");
     }
@@ -37,4 +32,13 @@ package org.example;
         return amount == money.amount
                 && currency.equals(money.currency());
     }
-}
+
+     Expression plus(Money addend){
+         return new Sum(this,addend);
+     }
+
+     public Money reduce(String to){
+         return this;
+     }
+
+ }
