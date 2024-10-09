@@ -5,7 +5,7 @@ package org.example;
     protected int amount;
     protected String currency;
 
-     Expression times(int multiplier) {
+     public Expression times(int multiplier) {
          return new Money(amount * multiplier, currency);
      }
      public String toString(){
@@ -33,9 +33,14 @@ package org.example;
                 && currency.equals(money.currency());
     }
 
-     Expression plus(Expression addend) {
+     public Expression plus(Expression addend) {
          return new Sum(this, addend);
      }
+
+
+     //Expression plus(Expression addend) {
+      //   return new Sum(this, addend);
+     //}
 
      public Money reduce(Bank bank,String to){
          int rate = bank.rate(currency,to);
